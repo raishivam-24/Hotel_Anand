@@ -70,38 +70,7 @@
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1rem;
 }
-@media (max-width: 600px) {
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-  .gallery-item.span-2 {
-    grid-column: span 1;
-  }
 
-  /* ✅ ADD THESE */
-  .gallery-item {
-    width: 100%;
-    min-height: 220px;        /* ensures short items are visible */
-  }
-
-  .gallery-item.aspect-wide {
-    aspect-ratio: 4/3;        /* less letterbox on narrow screens */
-  }
-
-  .gallery-item img,
-  .gallery-item > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  /* Make sure bottom labels always show on mobile (no hover needed) */
-  .gallery-item-hover-overlay {
-    opacity: 1;
-    background: rgba(0, 0, 0, 0.45);
-  }
-}
 .gallery-item {
   position: relative;
   overflow: hidden;
@@ -254,4 +223,36 @@
   color: rgba(245,240,232,0.65);
   font-size: 0.9rem;
   margin-bottom: 2rem;
+}
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .gallery-item.span-2 {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .gallery-item {
+    width: 100%;
+    min-height: 220px;
+    overflow: hidden;
+  }
+
+  .gallery-item-hover-overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.45);
+  }
+}
+
+/* Add this globally (not inside media query) */
+.photo-fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
