@@ -84,3 +84,40 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
 }
+@keyframes shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* ---------- Shared: Mandala Divider ---------- */
+.mandala-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem auto;
+  justify-content: center;
+}
+.mandala-line {
+  height: 1px;
+  width: 60px;
+}
+.mandala-line-left {
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+.mandala-line-right {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+/* ---------- Shared: photo-fill image ---------- */
+/* Used wherever a real photo slot exists (hero backgrounds, room cards,
+   dish cards, gallery, about cards). Pairs with a background gradient
+   on the parent so the layout never looks broken before real photos
+   are added — see public/images/README.md */
+.photo-fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

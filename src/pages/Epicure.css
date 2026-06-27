@@ -1,0 +1,350 @@
+/* ============ HERO ============ */
+.epicure-hero {
+  padding: 10rem 2.5rem 5rem;
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.epicure-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.epicure-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(14,3,5,0.80) 0%, rgba(74,14,26,0.88) 60%, rgba(14,3,5,0.95) 100%);
+}
+.epicure-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+.epicure-hero-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: rgba(201,168,76,0.7);
+  letter-spacing: 0.3em;
+  margin-bottom: 0.5rem;
+}
+.epicure-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 700;
+  color: #F5F0E8;
+  line-height: 1;
+}
+.epicure-hero-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+}
+.epicure-hero-desc {
+  color: rgba(245,240,232,0.7);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* ============ PHILOSOPHY ============ */
+.epicure-philosophy {
+  background: var(--ivory);
+  padding: 5rem 2.5rem;
+}
+.epicure-philosophy-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.epicure-philosophy-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  color: var(--burgundy);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.epicure-philosophy-text {
+  font-size: 0.93rem;
+  line-height: 1.9;
+  color: #555;
+  margin-bottom: 1rem;
+}
+.epicure-philosophy-text.last { margin-bottom: 2rem; }
+.epicure-philosophy-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.epicure-philosophy-points {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.epicure-philosophy-point {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  padding: 1.2rem;
+  background: var(--white);
+  border-left: 3px solid var(--gold);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+.epicure-philosophy-point-icon { font-size: 1.5rem; }
+.epicure-philosophy-point-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--burgundy);
+  margin-bottom: 0.3rem;
+}
+.epicure-philosophy-point-desc {
+  font-size: 0.83rem;
+  color: #777;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .epicure-philosophy-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+}
+
+/* ============ SPECIALTIES ============ */
+.epicure-specialties {
+  background: var(--burgundy-dark);
+  padding: 5rem 2.5rem;
+}
+.epicure-specialties-inner { max-width: 1200px; margin: 0 auto; }
+.epicure-specialties-heading-wrap { text-align: center; margin-bottom: 3.5rem; }
+.epicure-specialties-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: #F5F0E8;
+}
+.epicure-specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.epicure-dish-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,168,76,0.15);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s, border-color 0.3s;
+}
+.epicure-dish-card:hover {
+  background: rgba(201,168,76,0.06);
+  border-color: var(--gold);
+}
+.epicure-dish-image {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+}
+.epicure-dish-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(46,8,16,0.5), transparent 60%);
+}
+.epicure-dish-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.6rem;
+}
+.epicure-dish-badge.veg {
+  background: rgba(139,158,122,0.85);
+  color: #0E1A0E;
+  border: 1px solid rgba(139,158,122,0.9);
+}
+.epicure-dish-badge.nonveg {
+  background: rgba(180,50,50,0.85);
+  color: #fff;
+  border: 1px solid rgba(180,50,50,0.9);
+}
+.epicure-dish-body { padding: 1.6rem 2rem 2rem; }
+.epicure-dish-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+}
+.epicure-dish-origin {
+  font-size: 0.72rem;
+  color: rgba(201,168,76,0.5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+.epicure-dish-desc {
+  font-size: 0.85rem;
+  color: rgba(245,240,232,0.65);
+  line-height: 1.7;
+}
+.epicure-specialties-footer { text-align: center; margin-top: 2.5rem; }
+
+/* ============ BAR ============ */
+.epicure-bar {
+  background: var(--charcoal);
+  padding: 5rem 2.5rem;
+}
+.epicure-bar-inner { max-width: 1200px; margin: 0 auto; }
+.epicure-bar-heading-wrap { text-align: center; margin-bottom: 3.5rem; }
+.epicure-bar-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: #F5F0E8;
+  margin-bottom: 0.5rem;
+}
+.epicure-bar-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: rgba(201,168,76,0.7);
+  font-size: 1.1rem;
+}
+.epicure-bar-desc {
+  color: rgba(245,240,232,0.6);
+  font-size: 0.9rem;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.epicure-bar-visual {
+  position: relative;
+  height: clamp(280px, 38vw, 460px);
+  margin-bottom: 3rem;
+  overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.15);
+}
+.epicure-bar-visual-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(14,3,5,0.75), rgba(14,3,5,0.15));
+}
+.epicure-bar-visual-caption {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 1.5rem;
+  z-index: 2;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+
+.epicure-bar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.epicure-bar-category {
+  background: #0E0305;
+  padding: 2rem;
+  border: 1px solid rgba(201,168,76,0.1);
+}
+.epicure-bar-category-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+}
+.epicure-bar-item {
+  font-size: 0.83rem;
+  color: rgba(245,240,232,0.65);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.epicure-bar-item-bullet {
+  color: var(--gold);
+  margin-right: 0.5rem;
+  font-size: 0.6rem;
+}
+
+.epicure-bar-info {
+  background: rgba(201,168,76,0.06);
+  border: 1px solid rgba(201,168,76,0.2);
+  padding: 2rem;
+  text-align: center;
+}
+.epicure-bar-info-line {
+  color: rgba(245,240,232,0.7);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.epicure-bar-info-gold { color: var(--gold); }
+.epicure-bar-info-link { color: var(--gold); text-decoration: none; }
+.epicure-bar-disclaimer {
+  font-size: 0.75rem;
+  color: rgba(245,240,232,0.4);
+  letter-spacing: 0.1em;
+}
+
+/* ============ AMBIENCE / CTA ============ */
+.epicure-ambience {
+  background: var(--gold);
+  padding: 5rem 2.5rem;
+  text-align: center;
+}
+.epicure-ambience-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--burgundy-dark);
+  margin-bottom: 1rem;
+}
+.epicure-ambience-desc {
+  color: rgba(30,5,10,0.7);
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+.epicure-ambience-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.epicure-ambience-btn-solid {
+  padding: 0.9rem 2.2rem;
+  background: var(--burgundy-dark);
+  color: var(--gold);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.epicure-ambience-btn-outline {
+  padding: 0.9rem 2.2rem;
+  background: transparent;
+  border: 2px solid var(--burgundy-dark);
+  color: var(--burgundy-dark);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
