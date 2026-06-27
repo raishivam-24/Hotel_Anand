@@ -77,6 +77,30 @@
   .gallery-item.span-2 {
     grid-column: span 1;
   }
+
+  /* ✅ ADD THESE */
+  .gallery-item {
+    width: 100%;
+    min-height: 220px;        /* ensures short items are visible */
+  }
+
+  .gallery-item.aspect-wide {
+    aspect-ratio: 4/3;        /* less letterbox on narrow screens */
+  }
+
+  .gallery-item img,
+  .gallery-item > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Make sure bottom labels always show on mobile (no hover needed) */
+  .gallery-item-hover-overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.45);
+  }
 }
 .gallery-item {
   position: relative;
