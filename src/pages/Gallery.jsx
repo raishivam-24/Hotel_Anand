@@ -91,13 +91,13 @@ export default function Gallery() {
           {/* Grid */}
           <div style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(270px,1fr))",
-            gap: "0.8rem"
+            gridTemplateColumns: "repeat(auto-fill, minmax(280px,1fr))",
+            gap: "1rem"
           }}>
             {filtered.map((item, i) => (
               <div key={i} onClick={() => setLightbox(item)} style={{
                 cursor: "pointer", position: "relative", overflow: "hidden",
-                gridColumn: i === 0 || i % 7 === 0 ? "span 2" : "span 1",
+                // gridColumn: i === 0 || i % 7 === 0 ? "span 2" : "span 1",
                 transition: "transform 0.3s"
               }}
                 onMouseEnter={e => e.currentTarget.style.transform = "scale(1.02)"}
@@ -105,7 +105,8 @@ export default function Gallery() {
               >
                 <ImageBox
                   src={item.src} emoji={item.emoji} label={item.label}
-                  aspectRatio={i === 0 || i % 7 === 0 ? "16/7" : "4/3"}
+                  // aspectRatio={i === 0 || i % 7 === 0 ? "16/7" : "4/3"}
+                  aspectRatio="4/3"
                 />
                 {/* Hover overlay */}
                 <div style={{
